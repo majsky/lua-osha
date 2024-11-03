@@ -75,6 +75,7 @@ return function()
         local updates = update.getUpdatePackages(factorio.getVersion())
         print(#updates .. " update" .. ((#updates > 1) and "s" or "") .. " avaiable")
 
+        factorio.stop()
         factorio.backup()
         for _, update in ipairs(updates) do
             applyUpdate(update)

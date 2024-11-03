@@ -74,4 +74,9 @@ function factorio.notice()
     os.execute(cmd)
 end
 
+function factorio.stop()
+    local cmd = string.gsub("tmux send-keys -t factorio-@INST 'C-c'", "@INST", _G.args.instance)
+    os.execute(cmd)
+end
+
 return factorio
