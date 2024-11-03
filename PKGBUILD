@@ -1,6 +1,7 @@
 _gitname=lua-osha
 pkgname=('osha')
 pkgrel=1
+pkgver=0.0.0
 arch=('any')
 pkgdesc='Factorio headless server autoupdater'
 url='https://github.com/majsky/lua-osha'
