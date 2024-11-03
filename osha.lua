@@ -56,7 +56,7 @@ return function()
 
     if args.backup then
         factorio.backup()
-        os.exit(0)
+        os.exit(0, true)
     end
 
     if updateAvail() then
@@ -69,7 +69,7 @@ return function()
 
         if not factorio.isEmpty() then
             factorio.notice()
-            os.exit(0)
+            os.exit(0, true)
         end
 
         local updates = update.getUpdatePackages(factorio.getVersion())
