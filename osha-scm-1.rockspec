@@ -17,12 +17,8 @@ dependencies = {
 build = {
     type = "builtin",
     modules = {
+        ["osha"] = "osha.lua",
         ["osha.factorio"] = "osha/factorio.lua",
         ["osha.updater"] = "osha/updater.lua"
-    },
-    install = {
-        bin = {
-            "osha.lua"
-        }
     }
 }

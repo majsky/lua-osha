@@ -50,7 +50,7 @@ local function applyUpdate(update)
     end
 end
 
-local function main()
+return function()
     parseArgs()
     loadConfig()
 
@@ -83,5 +83,3 @@ local function main()
 
     print("Up to date.")
 end
-
-main()
