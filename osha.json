@@ -1,0 +1,12 @@
+{
+  "serversDir": "/srv/factorio",
+  "downloadCommand": "wget -q -c -O @FILE @URL",
+  "backup": {
+    "path": "@SERVERSDIR/backups",
+    "command": "tar -cf @FILE -C @SERVERSDIR @INSTANCE"
+  },
+  "auth": {
+    "username": "",
+    "token": ""
+  }
+}

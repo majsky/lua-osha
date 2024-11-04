@@ -7,7 +7,7 @@ local factorio = require("osha.factorio")
 local function parseArgs()
     local parser = argparse("osha", "Factorio headless-server autoupdater")
     parser:argument("instance", "Factorio server instance name")
-    parser:option("--config", "Config file.", "osha.json")
+    parser:option("--config", "Config file.", "/etc/osha.json")
     parser:flag("-c --check", "Checks for updates")
     parser:flag("-b --backup", "Create new backup and exit")
 

@@ -35,6 +35,12 @@ function updater.getLatestVersion()
 end
 
 function updater.getUpdateLink(from, to)
+
+    if #_G.config.auth.username == 0 or #_G.config.auth.token == 0 then
+        print("No username or token set!")
+        os.exit(1, true)
+    end
+
     local url = _URLS.GETLINK
         :gsub("@USER@", _G.config.auth.username)
         :gsub("@TOKEN@", _G.config.auth.token)
