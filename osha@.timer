@@ -1,0 +1,9 @@
+[Unit]
+Description=Check factorio server updates for %i
+
+[Timer]
+OnUnitActiveSec=30m
+Persistent=true
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,7 @@
+[Unit]
+Description=Run factorio server updates for %i
+
+[Service]
+User=factorio
+Type=oneshot
+ExecStart=/usr/bin/osha %i
