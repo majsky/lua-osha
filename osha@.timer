@@ -2,7 +2,7 @@
 Description=Check factorio server updates for %i
 
 [Timer]
-OnUnitActiveSec=30m
+OnCalendar=*-*-* *:00:00
 Persistent=true
 
 [Install]
