@@ -1,6 +1,7 @@
 {
   "serversDir": "/srv/factorio",
   "downloadCommand": "wget -q -c -O @FILE @URL",
+  "httpTimeout": 10,
   "backup": {
     "path": "@SERVERSDIR/backups",
     "command": "tar -cf @FILE -C @SERVERSDIR @INSTANCE"

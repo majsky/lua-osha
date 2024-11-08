@@ -12,7 +12,7 @@ local _URLS = {
 local function _get(url)
     local req = request.new_from_uri(url)
 
-    local headers, stream = req:go(10)
+    local headers, stream = req:go(_G.config.httpTimeout)
     if headers == nil then
         error(tostring(stream))
     end
