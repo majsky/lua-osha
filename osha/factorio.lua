@@ -46,6 +46,22 @@ function factorio.backup()
         os.execute(cmd)
 end
 
+function factorio.isRunning()
+    local cmd = "tmux list-sessions"
+
+    local handle = assert(io.popen(cmd, "r"))
+
+    for line in handle:lines() do
+        local sessionName = line:match("([^:]+):")
+
+        if sessionName == "factorio-" .. _G.args.instance then
+            return true
+        end
+    end
+
+    return false
+end
+
 function factorio.isEmpty()
     local cmd = string.gsub("tmux send-keys -t factorio-@INST '/players o' 'C-m'; sleep 1; tmux capture-pane -t factorio-@INST -p", "@INST", _G.args.instance)
 

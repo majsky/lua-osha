@@ -67,15 +67,20 @@ return function()
             os.exit(1, true)
         end
 
-        if not factorio.isEmpty() then
-            factorio.notice()
-            os.exit(0, true)
+        if factorio.isRunning() then
+            if not factorio.isEmpty() then
+                factorio.notice()
+                os.exit(0, true)
+            end
         end
 
         local updates = update.getUpdatePackages(factorio.getVersion())
         print(#updates .. " update" .. ((#updates > 1) and "s" or "") .. " avaiable")
 
-        factorio.stop()
+        if factorio.isRunning() then
+            factorio.stop()
+        end
+        
         factorio.backup()
         for _, update in ipairs(updates) do
             applyUpdate(update)
